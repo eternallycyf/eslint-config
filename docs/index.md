@@ -1,10 +1,10 @@
 ---
 hero:
-  title: ims-monorepo-template
-  description: a monorepo and docs template
+  title: eslint-config
+  description: Eternallycyf's eslint config
   actions:
     - text: 快速上手
-      link: /guide
+      link: /changelog
     - text: Github
-      link: https://github.com/eternallycyf/ims-monorepo-template/
+      link: https://github.com/eternallycyf/eslint-config/
 ---

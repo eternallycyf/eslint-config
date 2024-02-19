@@ -1,0 +1,34 @@
+{
+  "name": "@ims-view/eslint-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "scripts": {
+    "build": "father build",
+    "clean": "rm -rf es lib dist build coverage .eslintcache",
+    "cov": "jest --coverage",
+    "doctor": "father doctor",
+    "prepublishOnly": "npm run doctor && npm run build",
+    "start": "father dev",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@ims-view/eslint-config-basic": "1.0.0",
+    "@ims-view/eslint-config-react": "1.0.0",
+    "@ims-view/eslint-config-ts": "1.0.0",
+    "@ims-view/eslint-config-vue": "1.0.0",
+    "local-pkg": "^0.4.3",
+    "@babel/runtime": "^7.23.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

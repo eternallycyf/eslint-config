@@ -2,7 +2,6 @@ import { defineConfig } from 'dumi';
 import type { SiteThemeConfig } from 'dumi-theme-antd-style';
 import { footer } from 'ims-template-config';
 import path from 'path';
-import { featuresZh } from './config/features';
 import style from './docs/siteIndexStyle';
 import { homepage, name as repo } from './package.json';
 
@@ -28,7 +27,6 @@ const themeConfig: SiteThemeConfig = {
           openExternal: true,
         },
       ],
-      features: featuresZh,
     },
     'en-US': {
       description: 'dumi2 theme similar to antd v5 website',
@@ -47,15 +45,15 @@ const themeConfig: SiteThemeConfig = {
   },
   // 目前只能设置一个 自动设置apiHeader
   apiHeader: {
-    sourceUrl: `https://github.com/eternallycyf/ims-monorepo-template/tree/master/packages/bar/src/{atomId}/index.tsx`,
-    docUrl: `https://github.com/eternallycyf/ims-monorepo-template/tree/master/packages/bar/src/{atomId}/index.md`,
-    pkg: '@ims-view/bar',
-    match: ['/bars'],
+    sourceUrl: `https://github.com/eternallycyf/eslint-config/tree/master/packages/eslint-config/src/{atomId}/index.tsx`,
+    docUrl: `https://github.com/eternallycyf/eslint-config/tree/master/packages/eslint-config/src/{atomId}/index.md`,
+    pkg: '@ims-view/eslint-config',
+    match: ['/eslint-configs'],
   },
   footerConfig: {
     bottom: '2023',
     copyright: 'Made with ❤️ by eternallycyf - AFX & 数字科技',
-    columns: footer,
+    columns: footer('eslint-config'),
   },
 };
 
@@ -68,16 +66,31 @@ export default defineConfig({
   publicPath: isProd ? '/' : basePath,
   favicons: [isProd ? '/images/favicon.ico' : `/${repo}/images/favicon.ico`],
   alias: {
-    '@ims-view/foo': path.join(__dirname, './packages/foo/src'),
-    '@ims-view/bar': path.join(__dirname, './packages/bar/src'),
-    '@ims-view/foo/src': path.join(__dirname, './packages/foo/src/*'),
-    '@ims-view/bar/src': path.join(__dirname, './packages/bar/src/*'),
+    '@ims-view/eslint-config': path.join(__dirname, './packages/eslint-config/src'),
+    '@ims-view/eslint-config/src': path.join(__dirname, './packages/eslint-config/src/*'),
+    '@ims-view/eslint-config-basic': path.join(__dirname, './packages/eslint-config-basic/src'),
+    '@ims-view/eslint-config-basic/src': path.join(
+      __dirname,
+      './packages/eslint-config-basic/src/*',
+    ),
+    '@ims-view/eslint-config-react': path.join(__dirname, './packages/eslint-config-react/src'),
+    '@ims-view/eslint-config-react/src': path.join(
+      __dirname,
+      './packages/eslint-config-react/src/*',
+    ),
+    '@ims-view/eslint-config-ts': path.join(__dirname, './packages/eslint-config-ts/src'),
+    '@ims-view/eslint-config-ts/src': path.join(__dirname, './packages/eslint-config-ts/src/*'),
+    '@ims-view/eslint-config-vue': path.join(__dirname, './packages/eslint-config-vue/src'),
+    '@ims-view/eslint-config-vue/src': path.join(__dirname, './packages/eslint-config-vue/src/*'),
   },
   resolve: {
     docDirs: ['docs'],
     atomDirs: [
-      { type: 'foo', dir: './packages/foo/src' },
-      { type: 'bar', dir: './packages/bar/src' },
+      { type: 'eslint-config', dir: './packages/eslint-config/src' },
+      { type: 'eslint-config-basic', dir: './packages/eslint-config-basic/src' },
+      { type: 'eslint-config-react', dir: './packages/eslint-config-react/src' },
+      { type: 'eslint-config-ts', dir: './packages/eslint-config-ts/src' },
+      { type: 'eslint-config-vue', dir: './packages/eslint-config-vue/src' },
     ],
   },
   styles: [

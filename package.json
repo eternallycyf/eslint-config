@@ -1,17 +1,16 @@
 {
-  "name": "ims-monorepo-template",
+  "name": "eslint-config",
   "version": "1.0.0",
   "private": true,
   "keywords": [
     "monorepo",
     "template"
   ],
-  "description": "a monorepo and docs template",
-  "homepage": "https://github.com/eternallycyf/ims-monorepo-template#readme",
+  "homepage": "https://github.com/eternallycyf/eslint-config#readme",
   "bugs": {
-    "url": "https://github.com/eternallycyf/ims-monorepo-template"
+    "url": "https://github.com/eternallycyf/eslint-config"
   },
-  "repository": "git+https://github.com/eternallycyf/ims-monorepo-template.git",
+  "repository": "git+https://github.com/eternallycyf/eslint-config.git",
   "license": "MIT",
   "author": "eternallycyf(969475322@qq.com)",
   "workspaces": [
@@ -37,8 +36,8 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "release": "multi-semantic-release",
     "release:local": "multi-semantic-release --no-ci",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage --passWithNoTests",
     "tsc": "tsc -p tsconfig-check.json",
     "check-error": "npm run lint && npm run test && npm run test:coverage && npm run doctor"
   },
@@ -92,6 +91,7 @@
     "@types/lodash": "^4.14.199",
     "dumi": "^2",
     "antd": "^5",
-    "@ant-design/icons": "^5.2.6"
+    "@ant-design/icons": "^5.2.6",
+    "@ims-view/eslint-config": "^1.0.0"
   }
 }

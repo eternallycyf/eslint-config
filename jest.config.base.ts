@@ -13,8 +13,11 @@ const config: Config.InitialOptions = {
   testEnvironment: 'jsdom',
   moduleNameMapper: {
     ...base.moduleNameMapper,
-    '@ims-view/foo': '<rootDir>/packages/foo/src',
-    '@ims-view/bar': '<rootDir>/packages/bar/src',
+    '@ims-view/eslint-config': '<rootDir>/packages/eslint-config/src',
+    '@ims-view/eslint-config-basic': '<rootDir>/packages/eslint-config-basic/src',
+    '@ims-view/eslint-config-react': '<rootDir>/packages/eslint-config-react/src',
+    '@ims-view/eslint-config-ts': '<rootDir>/packages/eslint-config-ts/src',
+    '@ims-view/eslint-config-vue': '<rootDir>/packages/eslint-config-vue/src',
   },
   rootDir: path.resolve(__dirname, '.'),
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/es/'],
