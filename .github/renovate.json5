@@ -1,0 +1,3 @@
+{
+  extends: ['github>eternallycyf/renovate-config'],
+}
